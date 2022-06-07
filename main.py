@@ -1,13 +1,6 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 
-browser = webdriver.Firefox()
-
-browser.get('http://www.yahoo.com')
-assert 'Yahoo' in browser.title
-
-elem = browser.find_element(By.NAME, 'p')
-elem.send_keys('seleniumhq' + Keys.RETURN)
-
-browser.quit()
+option = webdriver.ChromeOptions()
+option.add_argument("-incognito")
+#option.add_argument("--headless")
+#option.add_argument("disable-gpu")
